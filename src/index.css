@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
+.active {
+  background-color: #ffb616 !important;
+  color: #fff !important;
+}
+
+.custom-select .ant-select-selector {
+  @apply text-[#667185] text-base;
+}
