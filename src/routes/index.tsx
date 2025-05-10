@@ -5,7 +5,6 @@ import Layout from "../layout";
 import ErrorPage from "../components/error-page";
 import ISuspense from "../components/suspense";
 
-// Lazy imports
 const Comments = lazy(() => import("../modules/comments"));
 const CommentDetails = lazy(() => import("../modules/comments/details"));
 const Users = lazy(() => import("../modules/users"));

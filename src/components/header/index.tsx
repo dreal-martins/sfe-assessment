@@ -61,7 +61,7 @@ const Header = () => {
         </div>
 
         <img
-          src="https://i.pinimg.com/474x/f0/4b/c7/f04bc7f4b16a2fc94078139ad03e6f88.jpg"
+          src="https://i.pinimg.com/736x/ed/52/d5/ed52d55f76b515dea60f1005fbb09f6f.jpg"
           width={45}
           height={45}
           alt="profile"

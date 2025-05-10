@@ -9,7 +9,7 @@ const LanguageSelector = () => {
 
   return (
     <Select
-      defaultValue={i18n.language || "en"}
+      defaultValue={"Language"}
       style={{ width: 100 }}
       onChange={handleChange}
       options={languageOptions}

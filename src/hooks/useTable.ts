@@ -5,7 +5,6 @@ import { UseTableProps } from "../interfaces";
 export function useTable<T>({ columns, initialData }: UseTableProps<T>) {
   const [data, setData] = useState(initialData);
 
-  // Add effect to update data when initialData changes
   useEffect(() => {
     setData(initialData);
   }, [initialData]);
