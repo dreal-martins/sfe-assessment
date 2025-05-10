@@ -62,5 +62,13 @@
   "enterBody": "Kommentar eingeben",
   "rowsPerPage": "Zeilen pro Seite",
   "searchUser": "Benutzernamen suchen...",
-  "searchComment": "Name suchen..."
+  "searchComment": "Name suchen...",
+  "confirmDeleteComments": "Sind Sie sicher, dass Sie die Kommentare löschen möchten?",
+  "yes": "Ja",
+  "no": "Nein",
+  "commentDeleted": "Kommentar gelöscht",
+  "commentUpdated": "Kommentar aktualisiert",
+  "commentCreated": "Kommentar erstellt",
+  "userUpdated": "Benutzer aktualisiert",
+  "userCreated": "Benutzer erstellt"
 }

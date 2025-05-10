@@ -62,5 +62,13 @@
   "enterBody": "Enter Comment",
   "rowsPerPage": "Rows per page",
   "searchUser": "Search Username...",
-  "searchComment": "Search Name..."
+  "searchComment": "Search Name...",
+  "confirmDeleteComments": "Are you sure you want to delete comments?",
+  "yes": "Yes",
+  "no": "No",
+  "commentDeleted": "Comment deleted",
+  "commentUpdated": "Comment updated",
+  "commentCreated": "Comment created",
+  "userUpdated": "User updated",
+  "userCreated": "User created"
 }

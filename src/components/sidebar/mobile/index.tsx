@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { routes } from "../../../constants/routes";
 import { useSidebar, useTheme } from "../../../context";
 import Navlink from "../../navlink";
@@ -7,9 +7,10 @@ import { useTranslation } from "react-i18next";
 import LanguageSelector from "../../language-selector";
 
 export default function MobileSidebar() {
-  const { isSidebarOpen } = useSidebar();
+  const { isSidebarOpen, closeSidebar } = useSidebar();
   const { mode } = useTheme();
   const { t } = useTranslation();
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -17,11 +18,29 @@ export default function MobileSidebar() {
     } else {
       document.body.style.overflow = "";
     }
-
     return () => {
       document.body.style.overflow = "";
     };
   }, [isSidebarOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        closeSidebar();
+      }
+    };
+
+    if (isSidebarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebarOpen, closeSidebar]);
 
   return (
     <div
@@ -29,7 +48,10 @@ export default function MobileSidebar() {
         isSidebarOpen ? "block" : "hidden"
       }`}
     >
-      <div className="w-[80%] h-full flex flex-col justify-between px-3 py-5 bg-dark dark:bg-light overflow-y-auto">
+      <div
+        ref={sidebarRef}
+        className="w-[80%] h-full flex flex-col justify-between px-3 py-5 bg-dark dark:bg-light overflow-y-auto"
+      >
         <div className="flex flex-col gap-5 flex-1">
           <div className="flex justify-between items-center">
             <img

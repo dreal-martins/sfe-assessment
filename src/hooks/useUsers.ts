@@ -9,9 +9,12 @@ import { IUserFormData, IUsers } from "../interfaces";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { useDebounce } from "./useDebounce";
+import { useTranslation } from "react-i18next";
 
 export function useUsers() {
   const params = useParams();
+  const { t } = useTranslation();
+
   const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
@@ -100,7 +103,7 @@ export function useUsers() {
       },
     });
     if (res) {
-      toast.success("User created");
+      toast.success(t("userCreated"));
     }
     return res.json();
   };
@@ -119,7 +122,7 @@ export function useUsers() {
       },
     });
     if (res) {
-      toast.success("User updated");
+      toast.success(t("userUpdated"));
     }
     return res.json();
   };

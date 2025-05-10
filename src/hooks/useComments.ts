@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { IComment } from "../interfaces";
 import { toast } from "sonner";
 import { useDebounce } from "./useDebounce";
+import { useTranslation } from "react-i18next";
 
 export interface IFormData {
   name: string;
@@ -21,7 +22,7 @@ export function useComments() {
   let num = 1;
   const params = useParams();
   const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
-
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [totalPages, setTotalPages] = useState(0);
@@ -95,7 +96,7 @@ export function useComments() {
       },
     });
     if (res) {
-      toast.success("Comment created");
+      toast.success(t("commentCreated"));
     }
     return res.json();
   };
@@ -114,7 +115,7 @@ export function useComments() {
       },
     });
     if (res) {
-      toast.success("Comment updated");
+      toast.success(t("commentUpdated"));
     }
     return res.json();
   };
@@ -122,7 +123,7 @@ export function useComments() {
   const deleteComment = async (id: number) => {
     const res = await fetch(`${baseUrl}/comments/${id}`, { method: "DELETE" });
     if (res) {
-      toast.success("Comment deleted");
+      toast.success(t("commentDeleted"));
     }
     return res.json();
   };

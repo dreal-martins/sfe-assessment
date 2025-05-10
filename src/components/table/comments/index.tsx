@@ -68,11 +68,11 @@ export default function CommentsTable({ data }: Props) {
               <div className="flex flex-col gap-2">
                 <Popconfirm
                   placement="left"
-                  title={"Delete Comment"}
-                  description={"Are you sure you want to delete comments"}
-                  okText="Yes"
+                  title={t("deleteComment")}
+                  description={t("confirmDeleteComments")}
+                  okText={t("yes")}
                   onConfirm={() => handleDeleteComment(rowId)}
-                  cancelText="No"
+                  cancelText={t("no")}
                 >
                   <div className="flex gap-2 hover:text-[#8c640c] w-full">
                     <DeleteFilled />

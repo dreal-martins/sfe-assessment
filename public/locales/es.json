@@ -62,5 +62,13 @@
   "enterBody": "Ingrese un comentario",
   "rowsPerPage": "Filas por página",
   "searchUser": "Buscar nombre de usuario...",
-  "searchComment": "Buscar nombre.."
+  "searchComment": "Buscar nombre..",
+  "confirmDeleteComments": "¿Estás seguro de que deseas eliminar los comentarios?",
+  "yes": "Sí",
+  "no": "No",
+  "commentDeleted": "Comentario eliminado",
+  "commentUpdated": "Comentario actualizado",
+  "commentCreated": "Comentario creado",
+  "userUpdated": "Usuario actualizado",
+  "userCreated": "Usuario creado"
 }
